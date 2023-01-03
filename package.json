@@ -1,0 +1,29 @@
+{
+  "name": "@mollerse/create",
+  "version": "1.0.3",
+  "description": "Standard initializer pacakage for my projects.",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": "./index.js",
+  "type": "module",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollerse/npm-create.git"
+  },
+  "keywords": [
+    "npm",
+    "initializer"
+  ],
+  "author": "Stian Møllersen <stian.moellersen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.1"
+  }
+}
