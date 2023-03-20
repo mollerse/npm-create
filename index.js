@@ -28,16 +28,14 @@ function defaultCss() {
         height: 100vh;
         width: 100vw;
         overflow: hidden;
-      }
+        background: #050505;
 
-      .container {
-        margin: auto;
-        width: 100vw;
-        height: 100vh;
         display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .container > * {
+      body > * {
         margin: auto;
       }
   </style>`;
