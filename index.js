@@ -29,6 +29,7 @@ function defaultCss() {
         width: 100vw;
         overflow: hidden;
         background: #050505;
+        color: #ebebeb;
 
         display: flex;
         justify-content: center;
