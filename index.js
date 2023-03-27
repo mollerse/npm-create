@@ -52,6 +52,11 @@ function indexHtml(name, entry) {
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no"
     />
+    <link
+      href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII="
+      rel="icon"
+      type="image/x-icon"
+    />
     <title>${name}</title>
     ${defaultCss()}
   </head>
