@@ -221,7 +221,7 @@ async function create(options) {
   }
 
   if (!isPlain) {
-    writeFileSync(`${answers.entry}`, indexJs);
+    writeFileSync(`${answers.entry}`, indexJs());
   } else {
     writeFileSync(`${answers.entry}`, "");
   }
