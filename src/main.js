@@ -74,17 +74,17 @@ async function main() {
 
   console.log();
 
-  runTask("Install dependencies", "npm install --loglevel error", {
+  await runTask("Install dependencies", "npm install --loglevel error", {
     env: { ...process.env, ADBLOCK: "1", DISABLE_OPENCOLLECTIVE: "1" },
   });
 
   console.log();
 
-  runTask("Initialize git", "git init");
+  await runTask("Initialize git", "git init");
 
   console.log();
 
-  runTask("Creating initial commit", 'git add . && git commit -m"Initial commit"');
+  await runTask("Creating initial commit", 'git add . && git commit -m"Initial commit"');
 
   console.log();
 
