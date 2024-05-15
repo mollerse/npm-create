@@ -23,18 +23,20 @@ const MAJOR_FOR_DEPENDENCY = {
  */
 async function getLatestVersionForDep(dep) {
   let maybeMajor = MAJOR_FOR_DEPENDENCY[dep];
-  let version;
-  if (maybeMajor) {
-    let { stdout } = await exec(`npm info ${dep}@${maybeMajor} version`);
-    let versions = stdout.split("\n");
-    console.log(versions);
-    version = versions[versions.length - 1].trim();
+  let major;
+  if (!maybeMajor) {
+    major = "latest";
   } else {
-    let { stdout } = await exec(`npm info ${dep} version`);
-    version = stdout.trim();
+    major = maybeMajor;
   }
 
-  return version;
+  let { stdout } = await exec(`npm info ${dep}@${major} version --json`);
+  let versions = JSON.parse(stdout);
+  if (Array.isArray(versions)) {
+    return versions[versions.length - 1];
+  } else {
+    return versions;
+  }
 }
 
 /**
