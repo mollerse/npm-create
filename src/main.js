@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import inquirer from "inquirer";
 import { writeFile } from "node:fs/promises";
 import { basename } from "node:path";
