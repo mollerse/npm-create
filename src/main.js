@@ -18,11 +18,11 @@ const DEFAULTS = {
   lisence: "CC-BY-NC-SA-4.0",
 };
 
-/** @type {{title: import("./types.js").ProjectType, value: import("./types.js").Initializer}[]} */
+/** @type {{name: import("./types.js").ProjectType, value: import("./types.js").Initializer}[]} */
 const INITIALIZERS = [
-  { title: "Web", value: webInitializer },
-  { title: "Node", value: nodeInitializer },
-  { title: "Notebook", value: notebookInitializer },
+  { name: "Web", value: webInitializer },
+  { name: "Node", value: nodeInitializer },
+  { name: "Notebook", value: notebookInitializer },
 ];
 
 /**
