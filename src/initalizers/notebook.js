@@ -34,13 +34,14 @@ export default async function (answers) {
 
   return {
     sourceFiles: [
-      { name: "index.css", content: indexCss },
       { name: "observablehq.config.js", content: observableConfig(answers) },
       { name: "prettier.config.js", content: prettierConfig },
       { name: "eslint.config.js", content: eslintConfig },
       { name: ".gitignore", content: gitIgnore },
       { name: "package.json", content: packageJson },
+      { name: "src/index.css", content: indexCss },
       { name: "src/index.md", content: "" },
+      { name: `src/components/${answers.entry}`, content: "" },
     ],
   };
 }
