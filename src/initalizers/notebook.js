@@ -1,41 +1,46 @@
 import { readTemplateFile } from "../lib/read-template-file.js";
 import { DEPENDENCIES, DEV_DEPENDENCIES, packageJson as createPackageJson } from "./shared.js";
 
+/**
+ * @param {import("../types.js").Answers} answers
+ * @returns
+ */
+function observableConfig(answers) {
+  return `export default {
+  title: '${answers.name}',
+  root: './src/',
+  sidebar: true,
+  pager: false,
+  style: 'index.css',
+  cleanUrls: true,
+}`;
+}
+
 /** @type {import("../types.js").Initializer} */
 export default async function (answers) {
-  let indexJs = await readTemplateFile("index-waapi-clock.js");
-  let indexHtmlRaw = await readTemplateFile("index.html");
-  let indexCss = await readTemplateFile("index.css");
+  let indexCss = await readTemplateFile("index-notebook.css");
   let eslintConfig = await readTemplateFile("eslint.js");
   let prettierConfig = await readTemplateFile("prettier.js");
   let gitIgnore = await readTemplateFile("gitignore.txt");
 
-  let entry = answers.entry;
-  let name = answers.name;
-  let css = indexCss;
-
-  let indexHtml = indexHtmlRaw
-    .replace("__name__", name)
-    .replace("__entry__", entry)
-    .replace("__css__", css);
-
   let dependencies = [...DEPENDENCIES];
-  let devDependencies = [...DEV_DEPENDENCIES, "vite"];
+  let devDependencies = [...DEV_DEPENDENCIES, "@observablehq/framework", "@observablehq/plot"];
   let scripts = [
-    { key: "start", value: "vite" },
-    { key: "build", value: "vite build" },
+    { key: "start", value: "observable preview" },
+    { key: "build", value: "observable build" },
   ];
 
   let packageJson = await createPackageJson(answers, scripts, dependencies, devDependencies);
 
   return {
     sourceFiles: [
-      { name: entry, content: indexJs },
-      { name: "index.html", content: indexHtml },
+      { name: "index.css", content: indexCss },
+      { name: "observablehq.config.js", content: observableConfig(answers) },
       { name: "prettier.config.js", content: prettierConfig },
       { name: "eslint.config.js", content: eslintConfig },
       { name: ".gitignore", content: gitIgnore },
       { name: "package.json", content: packageJson },
+      { name: "src/index.md", content: "" },
     ],
   };
 }

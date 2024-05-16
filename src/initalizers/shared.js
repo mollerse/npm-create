@@ -16,6 +16,8 @@ const MAJOR_FOR_DEPENDENCY = {
   prettier: 3,
   "@eslint/js": 9,
   globals: 15,
+  "@observablehq/framework": 1,
+  "@observablehq/plot": 0.6,
 };
 
 /**
