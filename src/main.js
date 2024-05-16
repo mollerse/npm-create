@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import inquirer from "inquirer";
-import { writeFile } from "node:fs/promises";
-import { basename } from "node:path";
+import { writeFile, mkdir } from "node:fs/promises";
+import { basename, dirname } from "node:path";
 import { exec as execCb } from "node:child_process";
 import { promisify } from "node:util";
 
@@ -69,6 +69,13 @@ async function main() {
   let definition = await answers.type(answers);
 
   for (let file of definition.sourceFiles) {
+    let filename = file.name;
+    let maybeDir = dirname(filename);
+
+    if (maybeDir && maybeDir !== ".") {
+      await mkdir(maybeDir, { recursive: true });
+    }
+
     await writeFile(file.name, file.content, { encoding: "utf-8" });
   }
 
