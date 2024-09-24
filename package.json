@@ -1,6 +1,6 @@
 {
   "name": "@mollerse/create",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Standard initializer pacakage for my projects.",
   "main": "index.js",
   "publishConfig": {
