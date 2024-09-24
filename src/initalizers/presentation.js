@@ -16,9 +16,9 @@ export default async function (answers) {
   let css = indexCss;
 
   let indexHtml = indexHtmlRaw
-    .replace("__name__", name)
-    .replace("__entry__", entry)
-    .replace("__css__", css);
+    .replace(/__name__/g, name)
+    .replace(/__entry__/g, entry)
+    .replace(/__css__/g, css);
 
   let dependencies = [...DEPENDENCIES, "reveal.js"];
   let devDependencies = [...DEV_DEPENDENCIES, "vite"];
