@@ -9,6 +9,7 @@ import { promisify } from "node:util";
 import { default as webInitializer } from "./initalizers/web.js";
 import { default as nodeInitializer } from "./initalizers/node.js";
 import { default as notebookInitializer } from "./initalizers/notebook.js";
+import { default as presentationInitializer } from "./initalizers/presentation.js";
 
 const exec = promisify(execCb);
 
@@ -23,6 +24,7 @@ const INITIALIZERS = [
   { name: "Web", value: webInitializer },
   { name: "Node", value: nodeInitializer },
   { name: "Notebook", value: notebookInitializer },
+  { name: "Presentation", value: presentationInitializer },
 ];
 
 /**

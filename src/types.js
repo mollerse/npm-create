@@ -1,5 +1,5 @@
 /**
- * @typedef {"Web" | "Node" | "Notebook"} ProjectType
+ * @typedef {"Web" | "Node" | "Notebook" | "Presentation"} ProjectType
  *
  * @typedef Answers
  * @property {string} name

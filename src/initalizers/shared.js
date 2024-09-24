@@ -18,6 +18,7 @@ const MAJOR_FOR_DEPENDENCY = {
   globals: 15,
   "@observablehq/framework": 1,
   "@observablehq/plot": 0.6,
+  "reveal.js": 5,
 };
 
 /**
