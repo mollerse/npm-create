@@ -12,7 +12,7 @@ function observableConfig(answers) {
   sidebar: true,
   pager: false,
   style: 'index.css',
-  cleanUrls: true,
+  cleanUrls: false,
 }`;
 }
 
