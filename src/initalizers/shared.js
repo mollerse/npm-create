@@ -11,14 +11,14 @@ export const DEV_DEPENDENCIES = ["prettier", "eslint", "@eslint/js", "globals"];
 
 /** @type {Record.<string, number>} */
 const MAJOR_FOR_DEPENDENCY = {
-  vite: 5,
-  eslint: 9,
+  vite: 8,
+  eslint: 10,
   prettier: 3,
-  "@eslint/js": 9,
-  globals: 15,
+  "@eslint/js": 10,
+  globals: 17,
   "@observablehq/framework": 1,
   "@observablehq/plot": 0.6,
-  "reveal.js": 5,
+  "reveal.js": 6,
 };
 
 /**
