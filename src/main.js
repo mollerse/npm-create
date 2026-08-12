@@ -61,7 +61,7 @@ async function main() {
     {
       name: "type",
       message: "Which type of project is this?",
-      type: "list",
+      type: "select",
       choices: INITIALIZERS,
     },
   ]);

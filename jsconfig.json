@@ -4,7 +4,8 @@
     "strict": true, // Skrur på strict (no anys) sjekking
     "module": "NodeNext", // Trengs for å få riktig syntax-level på JS-filer
     "target": "ES2022", // Trengs for å få riktig syntax-level på JS-filer
-    "moduleResolution": "NodeNext" // Trengs for å resolve exports-feltet til riktig typedef
+    "moduleResolution": "NodeNext", // Trengs for å resolve exports-feltet til riktig typedef
+    "types": ["node"]
   },
   "include": ["src/**/*"],
   // Exclude ting som blir included av include
