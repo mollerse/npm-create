@@ -1,5 +1,5 @@
 import Reveal from "reveal.js";
-import RevealHighlight from "reveal.js/plugin/highlight/highlight.js";
+import RevealHighlight from "reveal.js/plugin/highlight";
 
 let deck = new Reveal({
   controls: false,

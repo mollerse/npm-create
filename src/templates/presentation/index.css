@@ -37,7 +37,7 @@ p {
 
 /* Other styles */
 
-.slides>section {
+.slides > section {
   height: 100%;
   width: 100%;
   padding: 2.5%;
@@ -63,9 +63,7 @@ p {
   text-align: left;
 }
 
-.standard h2 {}
-
-.standard>div {
+.standard > div {
   flex-grow: 1;
   padding: 2.5%;
   padding-top: 0;
@@ -100,7 +98,7 @@ p {
   z-index: 1;
 }
 
-.standard p+pre {
+.standard p + pre {
   margin-top: 0;
 }
 
