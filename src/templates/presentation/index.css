@@ -8,7 +8,16 @@
 }
 
 body {
-  aspect-ratio: 16/9;
+  width: 100vw !important;
+  height: calc((9 / 16) * 100vw) !important;
+}
+
+/* Landscape */
+@media (min-aspect-ratio: 16/9) {
+  body {
+    height: 100vh !important;
+    width: calc((16 / 9) * 100vh) !important;
+  }
 }
 
 /* Reveal.js styles */
@@ -18,7 +27,7 @@ body {
   --accent-color: hotpink;
   --main-font: "DejaVu Sans", Helvetica, sans-serif;
   --font-weight: 300;
-  --font-size: 3em;
+  --font-size: calc(var(--scale, 1) * 3em);
   --r-main-font-size: var(--font-size);
   --r-background-color: var(--background-color);
   --r-main-font: var(--main-font);
