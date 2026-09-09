@@ -12,7 +12,7 @@
  * @property {Initializer} type
  *
  * @typedef InitializerDefinition
- * @property {{name: string, content: string}[]} sourceFiles
+ * @property {{name: string, content: string, chmod?: string}[]} sourceFiles
  *
  * @callback Initializer
  * @param {Answers} answers

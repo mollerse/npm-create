@@ -7,9 +7,11 @@ export default async function (answers) {
   let indexHtmlRaw = await readTemplateFile("presentation/index.html");
   let indexCss = await readTemplateFile("presentation/index.css");
   let darculaCss = await readTemplateFile("presentation/darcula.css");
+  let gitIgnore = await readTemplateFile("presentation/gitignore.txt");
+  let viteConfig = await readTemplateFile("presentation/vite.config.js");
+  let buildShRaw = await readTemplateFile("presentation/build.sh");
   let eslintConfig = await readTemplateFile("eslint.js");
   let prettierConfig = await readTemplateFile("prettier.js");
-  let gitIgnore = await readTemplateFile("gitignore.txt");
 
   let entry = answers.entry;
   let name = answers.name;
@@ -19,6 +21,8 @@ export default async function (answers) {
     .replace(/__name__/g, name)
     .replace(/__entry__/g, entry)
     .replace(/__css__/g, css);
+
+  let buildSh = buildShRaw.replace(/__name__/g, name);
 
   let dependencies = [...DEPENDENCIES, "reveal.js"];
   let devDependencies = [...DEV_DEPENDENCIES, "vite"];
@@ -38,6 +42,8 @@ export default async function (answers) {
       { name: "eslint.config.js", content: eslintConfig },
       { name: ".gitignore", content: gitIgnore },
       { name: "package.json", content: packageJson },
+      { name: "vite.config.js", content: viteConfig },
+      { name: "build.sh", content: buildSh, chmod: "u+x" },
     ],
   };
 }

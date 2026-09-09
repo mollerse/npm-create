@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import inquirer from "inquirer";
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir, chmod } from "node:fs/promises";
 import { basename, dirname } from "node:path";
 import { exec as execCb } from "node:child_process";
 import { promisify } from "node:util";
@@ -79,6 +79,10 @@ async function main() {
     }
 
     await writeFile(file.name, file.content, { encoding: "utf-8" });
+
+    if (file.chmod != null) {
+      await chmod(file.name, file.chmod);
+    }
   }
 
   console.log();
