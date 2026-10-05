@@ -43,7 +43,7 @@ export default async function (answers) {
       { name: ".gitignore", content: gitIgnore },
       { name: "package.json", content: packageJson },
       { name: "vite.config.js", content: viteConfig },
-      { name: "build.sh", content: buildSh, chmod: "u+x" },
+      { name: "build.sh", content: buildSh, chmod: 0o764 },
     ],
   };
 }
